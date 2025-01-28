@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등학교 1학년 덧셈 문제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .problem {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>초등학교 1학년 덧셈 문제</h1>
+    <div id="problems">
+        <!-- 문제가 여기에 동적으로 생성됩니다 -->
+    </div>
+
+    <script>
+        // 두 자리 수와 한 자리 수 덧셈 문제 생성
+        const problems = [];
+        for (let i = 0; i < 50; i++) {
+            const twoDigit = Math.floor(Math.random() * 90) + 10; // 두 자리 수 (10~99)
+            const oneDigit = Math.floor(Math.random() * 9) + 1;   // 한 자리 수 (1~9)
+            problems.push(`${twoDigit} + ${oneDigit} = `);
+        }
+
+        // 문제를 웹페이지에 표시
+        const problemContainer = document.getElementById('problems');
+        problems.forEach((problem, index) => {
+            const problemElement = document.createElement('div');
+            problemElement.className = 'problem';
+            problemElement.textContent = `${index + 1}. ${problem}`;
+            problemContainer.appendChild(problemElement);
+        });
+    </script>
+</body>
+</html>
